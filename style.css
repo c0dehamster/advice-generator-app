@@ -153,5 +153,6 @@ body {
 		margin: 0;
 		padding-block: 3rem 4.5rem;
 		padding-inline: 3rem;
+		border-radius: 1rem;
 	}
 }
