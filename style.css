@@ -143,3 +143,15 @@ body {
 }
 
 /* Media query */
+
+@media screen and (min-width: 40rem) {
+	body {
+		justify-content: center;
+	}
+
+	.card {
+		margin: 0;
+		padding-block: 3rem 4.5rem;
+		padding-inline: 3rem;
+	}
+}
