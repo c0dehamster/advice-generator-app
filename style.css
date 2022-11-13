@@ -136,4 +136,10 @@ body {
 
 /* Active states */
 
+@media (hover: hover) {
+	.button:hover {
+		box-shadow: 0 0 1.5rem var(--color-prrimary-neon-green);
+	}
+}
+
 /* Media query */
