@@ -1,0 +1,139 @@
+/* Box sizing rules, remove default paddings and margins */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* General styling */
+
+:root {
+	--color-primary-light-cyan: hsl(193, 38%, 86%);
+	--color-prrimary-neon-green: hsl(150, 100%, 66%);
+
+	--color-neutral-grayish-blue: hsl(217, 19%, 38%);
+	--color-neutral-dark-grayish-blue: hsl(217, 19%, 24%);
+	--color-neutral-dark-blue: hsl(218, 23%, 16%);
+
+	--font-size-200: 11px;
+	--font-size-400: 13px;
+	--font-size-600: 24px;
+	--font-size-800: 28px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	background-color: var(--color-neutral-dark-blue);
+}
+
+/* Card */
+
+.card {
+	max-width: 33.75rem;
+	margin-block-start: 7.5rem;
+	margin-inline: 1rem;
+	padding-block-start: 2.5rem;
+	padding-block-end: 4rem;
+	padding-inline: 1.5rem;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 28px;
+
+	border-radius: 10px;
+
+	background-color: var(--color-neutral-dark-grayish-blue);
+	font-family: "Manrope", sans-serif;
+	font-weight: 800;
+}
+
+.advice-number {
+	font-size: clamp(var(--font-size-200), 2.93vw, var(--font-size-400));
+	color: var(--color-prrimary-neon-green);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.advice {
+	padding-block-end: 2.5rem;
+
+	background-image: url("./images/pattern-divider-mobile.svg");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+
+	text-align: center;
+	font-size: clamp(var(--font-size-600), 6.4vw, var(--font-size-800));
+	color: var(--color-primary-light-cyan);
+}
+
+.button {
+	position: absolute;
+	bottom: 0;
+	transform: translateY(50%);
+
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+
+	border: none;
+
+	background-color: var(--color-prrimary-neon-green);
+	background-image: url("./images/icon-dice.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Active states */
+
+/* Media query */
