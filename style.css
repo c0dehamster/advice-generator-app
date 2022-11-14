@@ -135,6 +135,18 @@ body {
 	background-position: center;
 }
 
+.button::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 0 0;
+	border-radius: 50%;
+
+	opacity: 0;
+	box-shadow: 0 0 1.5rem var(--color-prrimary-neon-green);
+
+	transition: opacity 100ms ease-in;
+}
+
 .hidden--visually {
 	border: 0;
 	clip: rect(1px 1px 1px 1px);
@@ -150,8 +162,8 @@ body {
 /* Active states */
 
 @media (hover: hover) {
-	.button:hover {
-		box-shadow: 0 0 1.5rem var(--color-prrimary-neon-green);
+	.button:hover::before {
+		opacity: 100%;
 	}
 }
 
