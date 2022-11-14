@@ -8,11 +8,20 @@ const getAdvice = async () => {
 	return await response.json()
 }
 
+const updateContents = (id, text) => {
+	document.querySelector(".advice-number").textContent = id
+	document.querySelector(".advice").textContent = text
+}
+
 const showAdvice = async () => {
-	const adviceData = await getAdvice()
-	const slip = await adviceData.slip
-	document.querySelector(".advice-number").textContent = `advice #${slip.id}`
-	document.querySelector(".advice").textContent = slip.advice
+	try {
+		const adviceData = await getAdvice()
+		const slip = await adviceData.slip
+		updateContents(`advice #${slip.id}`, slip.advice)
+	} catch (error) {
+		console.log(error.message)
+		updateContents("", "Couldn't reach for an advice. Please, try later")
+	}
 }
 
 document.addEventListener("DOMContentLoaded", showAdvice)
