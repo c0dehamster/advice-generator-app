@@ -17,7 +17,7 @@ const showAdvice = async () => {
 	try {
 		const adviceData = await getAdvice()
 		const slip = await adviceData.slip
-		updateContents(`advice #${slip.id}`, slip.advice)
+		updateContents(`advice #${slip.id}`, `"${slip.advice}"`)
 	} catch (error) {
 		console.log(error.message)
 		updateContents("", "Couldn't reach for an advice. Please, try later")
