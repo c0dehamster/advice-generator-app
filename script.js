@@ -1,5 +1,5 @@
 const getAdvice = async () => {
-	const response = await fetch("https://api.adviceslip.com/advice")
+	const response = await fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
 
 	if (!response.ok) {
 		throw new Error(`An error occurred: ${response.status}`)
