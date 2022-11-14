@@ -48,7 +48,10 @@ Users should be able to:
 ### What I learned
 
 This challenge was a good practice for writing asynchronous JS code using async / await syntax.
-Working on it, I learned about HTTP protocol. In hindsight, it was not really necessary.
+
+Testing my app, I found an issue which resulted in the page showing the same advice multiple times when opened in Firefox. After taking a look at other solutions on Frontend Mentor and reading more about HTTP requests on MDN, I found out that the problem was related to HTTP response caching. Passing the 2nd argument to the fetch() function solved the problem:
+
+const response = await fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
 
 ### Continued development
 
